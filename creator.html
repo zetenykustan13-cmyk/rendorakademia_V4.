@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Creator Panel | RA V4</title>
+
+  <link
+    rel="stylesheet"
+    href="creator.css">
+
+</head>
+
+
+<body>
+
+
+<div id="loginPage" class="page">
+
+
+  <div class="login-card">
+
+    <div class="login-icon">
+      🔐
+    </div>
+
+    <h1>Creator Area</h1>
+
+    <p>
+      Rendőr Akadémia V4
+    </p>
+
+
+    <label>
+      Creator kód
+    </label>
+
+    <input
+      id="creatorCode"
+      type="password"
+      placeholder="Creator kód">
+
+
+    <button
+      onclick="checkCreatorCode()"
+      class="main-button">
+
+      KÓD ELLENŐRZÉSE
+
+    </button>
+
+
+    <div
+      id="loginError"
+      class="error">
+    </div>
+
+
+    <a
+      href="index.html"
+      class="back-link">
+
+      ← Vissza a főoldalra
+
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<div
+  id="panelPage"
+  class="panel-page hidden">
+
+
+  <header class="creator-header">
+
+    <div>
+
+      <strong>
+        🚔 CREATOR PANEL
+      </strong>
+
+      <small id="currentUser">
+        Creator
+      </small>
+
+    </div>
+
+
+    <button
+      onclick="goHome()"
+      class="back-button">
+
+      ↩ Vissza
+
+    </button>
+
+  </header>
+
+
+
+  <main class="creator-main">
+
+
+    <section class="welcome-card">
+
+      <span>CREATOR ACCESS</span>
+
+      <h1 id="welcomeText">
+        Üdvözöljük!
+      </h1>
+
+      <p>
+        weboldalt fejlesztette
+        <strong>ZetiWeb TM</strong>
+      </p>
+
+    </section>
+
+
+
+    <section>
+
+      <h2>📊 Status Change</h2>
+
+
+      <div class="control-grid">
+
+
+        <div class="control-card">
+
+          <h3>💬 Discord</h3>
+
+          <select id="discordSelect">
+
+            <option value="green|NYITVA">
+              🟢 NYITVA
+            </option>
+
+            <option value="red|ZÁRVA">
+              🔴 ZÁRVA
+            </option>
+
+            <option value="orange|ÜZEMKÉPTELEN">
+              🟠 ÜZEMKÉPTELEN
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <div class="control-card">
+
+          <h3>🎮 Játék</h3>
+
+          <select id="gameSelect">
+
+            <option value="red|ZÁRVA">
+              🔴 ZÁRVA
+            </option>
+
+            <option value="crimson|BANNOLVA">
+              🔴 BANNOLVA
+            </option>
+
+            <option value="orange|FEJLESZTÉS ALATT">
+              🟠 FEJLESZTÉS ALATT
+            </option>
+
+            <option value="green|NYITVA">
+              🟢 NYITVA
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </div>
+
+
+      <button
+        onclick="saveStatus()"
+        class="main-button">
+
+        STATUS MENTÉSE
+
+      </button>
+
+      <div
+        id="statusMessage"
+        class="success">
+      </div>
+
+    </section>
+
+
+
+    <section>
+
+      <h2>📢 Bejelentés</h2>
+
+      <div class="announcement-editor">
+
+        <textarea
+          id="announcementInput"
+          placeholder="Írd ide a staff bejelentést...">
+        </textarea>
+
+
+        <button
+          onclick="publishAnnouncement()"
+          class="main-button">
+
+          BEJELENTÉS KÖZZÉTÉTELE
+
+        </button>
+
+
+        <button
+          onclick="removeAnnouncement()"
+          class="danger-button">
+
+          AKTÍV BEJELENTÉS TÖRLÉSE
+
+        </button>
+
+
+        <div
+          id="announcementMessage"
+          class="success">
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section>
+
+      <h2>💬 Creator Chat</h2>
+
+      <div class="chat-box">
+
+        <div id="chatMessages">
+
+          <div class="chat-empty">
+            A chat jelenleg üres.
+          </div>
+
+        </div>
+
+
+        <div class="chat-input">
+
+          <input
+            id="chatInput"
+            placeholder="Írj üzenetet...">
+
+          <button
+            onclick="sendMessage()">
+
+            KÜLDÉS
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+</div>
+
+
+
+<script src="creator.js"></script>
+
+</body>
+          </html>
